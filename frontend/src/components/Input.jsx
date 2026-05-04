@@ -1,4 +1,3 @@
-// Input component - reusable input field
 import React from 'react';
 
 const Input = ({

@@ -1,4 +1,4 @@
-// Modal component - for showing dialogs and forms
+
 import React from 'react';
 
 const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {

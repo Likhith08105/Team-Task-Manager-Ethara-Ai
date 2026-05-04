@@ -1,4 +1,4 @@
-// Card component - for displaying content in a card layout
+
 import React from 'react';
 
 const Card = ({ children, className = '', title = '', subtitle = '', ...props }) => {

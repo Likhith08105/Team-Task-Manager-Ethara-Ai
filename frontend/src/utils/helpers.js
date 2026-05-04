@@ -1,41 +1,31 @@
-// Utility functions for common operations
 
-// AUTH UTILITIES
-
-// Save user token to localStorage
+// save user token to localStorage
 export const saveToken = (token) => {
   localStorage.setItem('token', token);
 };
 
-// Get token from localStorage
+
 export const getToken = () => {
   return localStorage.getItem('token');
 };
 
-// Remove token from localStorage (logout)
+
 export const removeToken = () => {
   localStorage.removeItem('token');
 };
 
-// Save user info to localStorage
 export const saveUser = (user) => {
   localStorage.setItem('user', JSON.stringify(user));
 };
 
-// Get user info from localStorage
 export const getUser = () => {
   const user = localStorage.getItem('user');
   return user ? JSON.parse(user) : null;
 };
 
-// Check if user is authenticated
 export const isAuthenticated = () => {
   return !!getToken();
 };
-
-// DATE UTILITIES
-
-// Format date to readable format (e.g., "Jan 15, 2024")
 export const formatDate = (dateString) => {
   if (!dateString) return 'No due date';
   
@@ -44,7 +34,6 @@ export const formatDate = (dateString) => {
   return date.toLocaleDateString('en-US', options);
 };
 
-// Check if date is overdue (past today and not completed)
 export const isOverdue = (dateString, status) => {
   if (!dateString || status === 'done') return false;
   
@@ -55,7 +44,6 @@ export const isOverdue = (dateString, status) => {
   return dueDate < today;
 };
 
-// Get days until due date
 export const getDaysUntilDue = (dateString) => {
   if (!dateString) return null;
   
@@ -69,9 +57,6 @@ export const getDaysUntilDue = (dateString) => {
   return daysDiff;
 };
 
-// STATUS UTILITIES
-
-// Get status label
 export const getStatusLabel = (status) => {
   const labels = {
     'todo': 'To Do',
@@ -81,7 +66,6 @@ export const getStatusLabel = (status) => {
   return labels[status] || status;
 };
 
-// Get status color for UI
 export const getStatusColor = (status) => {
   const colors = {
     'todo': 'bg-gray-200 text-gray-800',
@@ -91,9 +75,6 @@ export const getStatusColor = (status) => {
   return colors[status] || 'bg-gray-200 text-gray-800';
 };
 
-// PRIORITY UTILITIES
-
-// Get priority label
 export const getPriorityLabel = (priority) => {
   const labels = {
     'low': 'Low',
@@ -103,7 +84,6 @@ export const getPriorityLabel = (priority) => {
   return labels[priority] || priority;
 };
 
-// Get priority color for UI
 export const getPriorityColor = (priority) => {
   const colors = {
     'low': 'text-green-600',

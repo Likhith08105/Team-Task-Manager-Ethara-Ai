@@ -1,4 +1,4 @@
-// Main App component - handles routing
+// main app component - handles routing
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -10,7 +10,7 @@ import DashboardPage from './pages/DashboardPage';
 import ProjectPage from './pages/ProjectPage';
 import CreateProjectPage from './pages/CreateProjectPage';
 
-// Import CSS
+
 import './index.css';
 
 function App() {

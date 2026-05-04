@@ -1,4 +1,4 @@
-// Signup page - user registration
+
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { authSignup } from '../services/api';
@@ -32,13 +32,10 @@ const SignupPage = () => {
     e.preventDefault();
     setError('');
 
-    // Validate passwords match
     if (formData.password !== formData.confirmPassword) {
       setError('Passwords do not match');
       return;
     }
-
-    // Validate password length
     if (formData.password.length < 6) {
       setError('Password must be at least 6 characters long');
       return;
@@ -53,8 +50,6 @@ const SignupPage = () => {
       // Save token and user info
       saveToken(response.data.token);
       saveUser(response.data.user);
-
-      // Redirect to dashboard
       navigate('/dashboard');
     } catch (err) {
       // Show error message

@@ -1,4 +1,3 @@
-// Button component - reusable button
 import React from 'react';
 
 const Button = ({

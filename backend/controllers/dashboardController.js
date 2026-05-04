@@ -1,9 +1,7 @@
-// This controller provides dashboard statistics and analytics
 const mongoose = require('mongoose');
 const Project = require('../models/Project');
 const Task = require('../models/Task');
 
-// GET DASHBOARD STATS: Get overview of tasks for projects the user belongs to
 const getDashboardStats = async (req, res) => {
   try {
     const userId = req.userId;

@@ -1,45 +1,32 @@
-// This is the main server file that initializes Express and sets up all routes
-require('dotenv').config(); // Load environment variables from .env file
+require('dotenv').config(); 
 
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
 
-// Import all route files
+
 const authRoutes = require('./routes/auth');
 const projectRoutes = require('./routes/projects');
 const taskRoutes = require('./routes/tasks');
 const dashboardRoutes = require('./routes/dashboard');
 
-// Initialize Express app
 const app = express();
 
-// Connect to MongoDB
 connectDB();
 
-// MIDDLEWARE
-
-// Enable CORS (allows frontend to make requests from different domain)
 app.use(cors());
 
-// Parse incoming JSON requests
 app.use(express.json());
 
-// ROUTES
-
-// Authentication routes - no prefix
 app.use('/api/auth', authRoutes);
 
-// Project routes - /api/projects
 app.use('/api/projects', projectRoutes);
 
-// Task routes - /api/projects
 app.use('/api/projects', taskRoutes);
 
-// Dashboard routes - /api/dashboard
 app.use('/api/dashboard', dashboardRoutes);
 
-// Health check route (useful for deployment monitoring)
+
 app.get('/api/health', (req, res) => {
   res.status(200).json({ message: 'Server is running' });
 });
@@ -47,7 +34,6 @@ app.get('/api/health', (req, res) => {
 const path = require('path');
 
 
-// Serve frontend build
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // Catch-all route → send React app

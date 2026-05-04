@@ -1,4 +1,3 @@
-// Login page - user authentication
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { authLogin } from '../services/api';
@@ -16,7 +15,6 @@ const LoginPage = () => {
     password: '',
   });
 
-  // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -39,7 +37,7 @@ const LoginPage = () => {
       saveToken(response.data.token);
       saveUser(response.data.user);
 
-      // Redirect to dashboard
+      
       navigate('/dashboard');
     } catch (err) {
       // Show error message

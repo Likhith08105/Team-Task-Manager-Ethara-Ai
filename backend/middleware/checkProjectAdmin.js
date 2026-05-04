@@ -1,4 +1,4 @@
-// backend/middleware/checkProjectAdmin.js
+
 const Project = require('../models/Project');
 
 const getEntityId = (entity) => {

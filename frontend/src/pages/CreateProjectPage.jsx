@@ -1,4 +1,4 @@
-// Create Project page
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createProject } from '../services/api';
@@ -15,13 +15,13 @@ const CreateProjectPage = () => {
     description: '',
   });
 
-  // Handle form input changes
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle form submission
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
@@ -34,10 +34,10 @@ const CreateProjectPage = () => {
     setLoading(true);
 
     try {
-      // Call create project API
+      
       const response = await createProject(formData.name, formData.description);
 
-      // Redirect to new project page
+ 
       navigate(`/projects/${response.data.project._id}`);
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to create project');

@@ -1,4 +1,3 @@
-// ProtectedRoute component - handles authentication check for protected pages
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { isAuthenticated } from '../utils/helpers';

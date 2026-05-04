@@ -1,4 +1,4 @@
-// Main entry point for React application
+// main entry point for React application
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'

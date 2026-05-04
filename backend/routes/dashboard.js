@@ -1,4 +1,4 @@
-// This file defines dashboard routes
+
 const express = require('express');
 const router = express.Router();
 const auth = require('../middleware/auth');

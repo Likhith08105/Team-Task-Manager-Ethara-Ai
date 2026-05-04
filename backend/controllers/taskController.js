@@ -1,4 +1,3 @@
-// backend/controllers/taskController.js
 const Task = require('../models/Task');
 const Project = require('../models/Project');
 

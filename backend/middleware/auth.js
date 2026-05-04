@@ -1,4 +1,3 @@
-// This middleware verifies JWT token and checks if user is authenticated
 const jwt = require('jsonwebtoken');
 
 const auth = (req, res, next) => {

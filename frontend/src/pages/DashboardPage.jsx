@@ -45,7 +45,6 @@ const DashboardPage = () => {
     fetchDashboard();
   }, [fetchDashboard]);
 
-  // Refresh stale data when returning to the dashboard after project/task actions
   useEffect(() => {
     const refreshDashboard = () => {
       fetchDashboard(false);
@@ -64,13 +63,13 @@ const DashboardPage = () => {
     };
   }, [fetchDashboard]);
 
-  // Handle logout
+  
   const handleLogout = () => {
     removeToken();
     navigate('/login');
   };
 
-  // Handle navigate to project
+
   const handleOpenProject = (projectId) => {
     navigate(`/projects/${projectId}`);
   };
