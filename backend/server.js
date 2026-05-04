@@ -44,6 +44,16 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({ message: 'Server is running' });
 });
 
+const path = require('path');
+
+
+// Serve frontend build
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+// Catch-all route → send React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+});
 // ERROR HANDLING MIDDLEWARE
 
 // Handle 404 - Route not found
