@@ -1,6 +1,6 @@
 # Team Task Manager
 
-Team Task Manager is a MERN app for creating projects, adding team members, assigning tasks, and tracking task status.
+Team Task Manager is for creating projects, adding team members, assigning tasks, and tracking task status.
 
 ## Tech Stack
 
